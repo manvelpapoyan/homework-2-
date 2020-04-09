@@ -1,24 +1,19 @@
 function fibonacci(num,arr,i){
+ 
+if(i<num){
 
-if(num===1){
+if(i<2){
+arr.push(1)
 
-   return arr[0];
-
+}else {
+   arr[i]=arr[i-1]+arr[i-2];
 }
-if(num===2){
+i++;
+return fibonacci(num,arr,i)
 
-return arr;
-}
-
-arr[i]=arr[i-1]+arr[i-2];
-
-if(arr.length===num){
-
-   return arr;
 }else{
 
-   return fibonacci(num,arr,i+1);
+   return arr;
 }
 }
-
-console.log(fibonacci(20,[1,1],2))
+console.log(fibonacci(20,[],0))
